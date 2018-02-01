@@ -6,9 +6,16 @@ let appRoot = new Vue({
     rawProjects: [],
     projectsCount: 0
   },
+
   computed: {
     projects: function() {
-      return this.rawProjects.map(p => p.name)
+      return this.rawProjects.map( p => {
+        return {
+          name: p.name,
+          star_count: p.stargazers_count,
+          url: p.html_url
+        };
+      }).sort((a, b) => b.star_count > a.star_count );
     }
   },
 
