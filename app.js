@@ -13,8 +13,10 @@ let appRoot = new Vue({
   },
 
   created() {
+    const topic = "topic:semaphore-open-source"
+    const fork = "fork:true"
     axios
-      .get("https://api.github.com/search/repositories?q=topic:semaphore-open-source+org:renderedtext")
+      .get(`https://api.github.com/search/repositories?q=${topic}+org:renderedtext+${fork}`)
       .then(response => {
         const data = response.data
 
