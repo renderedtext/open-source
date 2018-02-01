@@ -14,7 +14,7 @@ let appRoot = new Vue({
 
   created() {
     axios
-      .get("https://api.github.com/search/repositories?q=topic:os-website+org:renderedtext")
+      .get("https://api.github.com/search/repositories?q=topic:semaphore-open-source+org:renderedtext")
       .then(response => {
         const data = response.data
 
