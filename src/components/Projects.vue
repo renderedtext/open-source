@@ -3,8 +3,13 @@
     <div v-for="project in projects" :key="project.id">
       <span>
         <a href="project.url">{{ project.name }}</a>
-        {{ project.starCount }}
+        ⭐️{{ project.starsCount }}
+        🍴{{ project.forksCount }}
+        <span v-if="project.license">
+          📄{{ project.license }}
+        </span>
         <p>{{ project.description }}</p>
+        <br>
       </span>
     </div>
   </div>
@@ -25,16 +30,19 @@ export default {
   computed: {
     projects: function() {
       const projects = this.rawProjects.map(p => {
+        const license = p.license
         return {
           name: p.name,
           description: p.description,
-          starCount: p.stargazers_count,
+          starsCount: p.stargazers_count,
+          forksCount: p.forks_count,
+          license: license && license.spdx_id,
           url: p.html_url
         }
       });
 
       return projects.sort((a, b) =>
-        b.starCount - a.starCount
+        b.starsCount - a.starsCount
       );
     }
   },
