@@ -1,31 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Open Source projects from Semaphore">
-    <meta name="keywords" content="Open Source,Ruby,Rails,Elixir,JavaScript">
-    <meta name="author" content="Semaphore CI">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Semaphore CI Open Source</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>open-source</title>
   </head>
   <body>
-
-  <h1>Open Projects from the Semaphore CI team</h1>
-
-  <div id="app-root">
-
-    <div v-for="project in projects">
+    <div id="app">
+      <div v-for="project in projects">
         {{ project.name }}
         {{ project.starCount }}
         {{ project.url }}
       </div>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-  <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
-
-  <script src="app.js"></script>
-
+    </div>
+    <!-- built files will be auto injected -->
   </body>
 </html>
