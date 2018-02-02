@@ -14,7 +14,12 @@
   <h1>Open Projects from the Semaphore CI team</h1>
 
   <div id="app-root">
-    {{ projects }}
+
+    <div v-for="project in projects">
+        {{ project.name }}
+        {{ project.starCount }}
+        {{ project.url }}
+      </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
