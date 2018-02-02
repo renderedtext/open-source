@@ -2,7 +2,14 @@
   <div id="app">
     <img class="cover" src="./assets/cover.png">
 
-    <h1>Semaphore ❤️ Open Source</h1>
+    <div class="intro-box">
+      <h1>Semaphore ❤️ Open Source</h1>
+      <p align="center" class="intro">
+      At Semaphore, we believe that open source is good for everyone. By being
+      open and freely available, it enables and encourages collaboration and the
+      development of technology, while solving real world problems.
+      </p>
+    </div>
 
     <div class="projects">
       <Projects/>
@@ -34,5 +41,9 @@ export default {
   width: 100%;
   height: 100%;
   position: relative;
+}
+
+.intro {
+  margin: 20%;
 }
 </style>

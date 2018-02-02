@@ -1,15 +1,18 @@
 <template>
   <div>
+    <hr>
     <div v-for="project in projects" :key="project.id">
       <span>
-        <a href="project.url">{{ project.name }}</a>
-        ⭐️{{ project.starsCount }}
-        🍴{{ project.forksCount }}
-        <span v-if="project.license">
-          📄{{ project.license }}
-        </span>
-        <p>{{ project.description }}</p>
-        <br>
+        <a v-bind:href="project.url">{{ project.name }}</a>
+        <p>
+          ⭐️ {{ project.starsCount }}
+          🍴 {{ project.forksCount }}
+          <span v-if="project.license">
+            📄 {{ project.license }}
+          </span>
+        </p>
+        <p class="project">{{ project.description }}</p>
+        <hr>
       </span>
     </div>
   </div>
@@ -79,5 +82,13 @@ li {
 }
 a {
   color: #42b983;
+}
+.project {
+  margin-left: 30%;
+  margin-right: 30%;
+}
+hr {
+  margin-left: 30%;
+  margin-right: 30%;
 }
 </style>
